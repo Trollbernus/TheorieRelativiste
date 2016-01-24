@@ -1,12 +1,3 @@
-%Pour compiler ce fichier avec bibtex :
-%pdflatex 150611_raport.tex
-%bibtex 150611_raport.aux
-%pdflatex 150611_raport.tex
-%pdflatex 150611_raport.tex
-
-%lien dropbo : https://www.dropbox.com/s/c7n7242xsq36t4y/20140816_rapport.pdf
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %        Packages utilisés                %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -29,56 +20,42 @@
 	\geometry{top=3cm, bottom=3cm, left=3cm , right=3cm} %plus simple que le suivant, que je ne maîtrise pas...
 	%\geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=1.5cm,rmargin=1.5cm,headheight=2.5cm,headsep=2.5cm,footskip=2.5cm}
 	
-	\usepackage{amstext} %??
-	\usepackage{graphicx} %??
-	%\usepackage{amsmath} %Utilisé plus bas
-	\usepackage{amssymb} %??
+	\usepackage{amstext} 
+	\usepackage{graphicx} 
+	\usepackage{amssymb} 
 	\usepackage{hyperref} %Celui-là il est surpuissant : il fait tous les liens hypertexte et intratexte. [hidelinks]==> pas de couleur 
-	\hypersetup{colorlinks=false }
+	%\hypersetup{colorlinks=false }
 	%\hypersetup{hidelinks}
 
 
-	\usepackage[footnotesize]{caption} %Moarf. Dans le doute je le garde.
-	%\usepackage{graphicx}
-	\usepackage{amsmath, amssymb} %oui mais ???
-	%\usepackage[applemac]{inputenc}
-	%\usepackage[T1]{fontenc}
-	\usepackage{color} %???
-	%\usepackage{times} %permet de choisir la police, mais la Latin Modern est tellement belle que je n'y touche pas.
-	%\usepackage[francais]{babel} %déjà utilisé.
+	\usepackage[footnotesize]{caption} 
+	\usepackage{amsmath, amssymb} 
+	\usepackage{color} 
+	%\usepackage{times} %permet de choisir la police, mais la Latin Modern me convient. 
 	%\usepackage{fullpage} %définit tout une mise en page qui bousille le package geometry !!!! ==> je ne l'utilise pas.
 
-	\usepackage{natbib} %Pour la bibliographie ?
-	\usepackage{colortbl} %pour les couleurs
+	\usepackage{natbib} 
+	\usepackage{colortbl}
 
-	\usepackage[french]{minitoc} % papy : pour créer une table des matières juste avant l'annexe. Toujours pas réussi à utiliser ce truc infernal.
+	\usepackage[french]{minitoc} 
 	\usepackage{tocloft}  
 	\usepackage{titletoc}  
-	\usepackage{appendix} %papy : utiliser la commande \appendix 
-	\usepackage{eurosym} %papy : pour ajouter le symbole € en tapant \euro
-	%\usepackage{minitoc}
-	\usepackage{colortbl} %papy : pour les couleurs du tableau
+	\usepackage{appendix} 
+	\usepackage{eurosym} % pour ajouter le symbole € en tapant \euro
+	\usepackage{colortbl} 
 	\usepackage{lipsum}
 	\usepackage{amsthm} %théorèmes, etc.
 	\usepackage{stmaryrd} %crochets d'entiers
 	\usepackage{empheq} %équations encadrées
-	\usepackage{mathrsfs}  %zoulies majuscules
+	\usepackage{mathrsfs}  %zoulies majuscules avec la commande \mathscr{}
 
 	\usepackage{yfonts} %gothique ; utiliser la commande : \textgoth{ABCdef123} ou \textswab{ABCdef123}.
 
 	\usepackage{bm} %\bm{truc} = truc en gras mais avec la bonne police
 
 
-	%\usepackage{fancyhdr} %bas de pages %Plüthaar.
-	%\pagestyle{fancy}
-
-
 	\makeatletter
 
-	%%%%%%%%%%%%%%%%quelques commandes dont je n'ai pas encore saisi l'utilité.
-	\def \eps {\varepsilon}
-	\def\percent{\%}
-	\def\etal{{et al.}}
 
 
 
@@ -104,29 +81,12 @@
 
 
 
-
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.%%% ==> et ???
-	\DeclareRobustCommand{\greektext}{%
-	  \fontencoding{LGR}\selectfont\def\encodingdefault{LGR}}
-	\DeclareRobustCommand{\textgreek}[1]{\leavevmode{\greektext #1}}
-	\DeclareFontEncoding{LGR}{}{}
-	\DeclareTextSymbol{\~}{LGR}{126}
-	\newcommand{\lyxmathsym}[1]{\ifmmode\begingroup\def\b@ld{bold}
-	  \text{\ifx\math@version\b@ld\bfseries\fi#1}\endgroup\else#1\fi}
-
-
 	\makeatother
 
 
 
 	\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
-
-
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%Théorèmes, démonstrations, etc.
-	%
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%Théorèmes, démonstrations, etc.
@@ -156,6 +116,12 @@
 	\def\d{\mathrm{d}}
 	\def\e{\mathrm{e}}
 	\def\i{\mathrm{i}}
+
+
+	\def \eps {\varepsilon}
+	\def\percent{\%}
+	\def\etal{{et al.}}
+
 
 
 
@@ -198,13 +164,14 @@
 	%  Logos    %
 	%%%%%%%%%%%%%
 
+	%On s'en occupera plus tard.
 
 
 	\begin{center}
 		%\includegraphics[width = 40mm]{../logos/SANSELIPS.jpg} \hfill
 		%\includegraphics[width = 40mm]{../logos/logo_IMCCE_small.jpg} \hfill
 		%\includegraphics[width = 40mm]{../logos/logo_iap.jpg} \hfill
-%		\includegraphics[width = 40mm]{../logos/UPMC_pantones_7504-166.jpg} \hfill    
+		%\includegraphics[width = 40mm]{../logos/UPMC_pantones_7504-166.jpg} \hfill    
 
 	\end{center}
 
@@ -213,41 +180,13 @@
 
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%   Code pour zoulie page de garde. NE PAS TOUCHER !!!!!!!!!    %
+	%   Code pour zoulie page de garde.                             %
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
-	%%%%%%%%%%%%%%%%%
-	%Si ce modèle de page de garde ne te plaît pas, cherches-en d'autres.
-	%%%%%%%%%%%%%%%%%
-
-
-
-
-
-	\begin{minipage}[t]{0.3\textwidth}
-	  \begin{flushleft}
-	    
-	    
-	  \end{flushleft}
-	\end{minipage}
-	\begin{minipage}[t]{0.3\textwidth}
-	  \begin{center}
-	    
-	  \end{center}
-	\end{minipage}
-	\begin{minipage}[t]{0.3\textwidth}
-	  \begin{flushright}
-	       
-	  \end{flushright}
-	\end{minipage}
-	\\[1cm]
-
-
-	%\textsc{\Large Stage - M2 DSG - Observatoire de Paris}\\[0.6cm]
 	\HRule \\[0.8cm]
-	{\huge  Théorie de la relativité générale \\ et applications physiques }\\[0.4cm]
+	{\huge  Théorie de la relativité générale \\ et applications }\\[0.4cm]
 	\HRule \\[1cm]
 
 	Auteurs : \\
@@ -256,64 +195,6 @@
 	Loïc Chantry (Observatoire de Paris, LUTH) \\
 	Olivier Coquand (LPTHE) \\
 	Raphaël D. Lasseri (IPN)
-
-	%\begin{minipage}[t]{0.3\textwidth}
-	  %\begin{flushleft} \large
-	    %\emph{Étudiant :}\\
-	    %Léo Bernus\\
-			%M1 Phytem \\ 
-			%Observatoire de Paris\\
-			%M2 AAIS DSG
-			%Stage effectué à l'IMCCE,\\
-			%77~avenue Denfert~Rochereau, \\ 75014 Paris.
-	  %\end{flushleft}
-	%\end{minipage}
-	%\begin{minipage}[t]{0.6\textwidth}
-	  %\begin{flushright} \large
-	    %\emph{Encadrant :} \\
- 	    %Jacques Laskar \\
-	    %Observatoire de Paris \\
-	    %IMCCE \\
-	    %\vspace{0.5cm}
-	    %\emph{Co-encadrant :}\\
-	    %Luc Blanchet \\
-	    %IAP
-
-
-	  %\end{flushright}
-
-	%\end{minipage}
-	%\\[2cm]
-
-
-
-
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%      Images pour la page de garde    %
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-	%%%Ça c'est pas pour moi mais je le garde on sait jamais..
-
-	%\begin{minipage}[t]{0.6\textwidth}
-	%  \begin{flushcenter} \large
-	%    \emph{date de remise du rapport :} \\
-	%    35 décembre 2048
-	%  \end{flushcenter}	
-	%\end{minipage}
-	%\\[2cm]
-	%
-
-
-
-	%\begin{center}
-	  %\includegraphics[scale=0.965]{mimas_noire_2.jpg} \\ %\hfill
-	  %\includegraphics[width = 72mm]{mimas_rings.jpg} \hfill
-	  %\includegraphics[width = 40mm]{UPMC_pantones_7504-166.jpg} \hfill
-	  %\includegraphics[width = 35mm]{ens.jpg} 
-	%\end{center}
-
 
 
 
@@ -344,7 +225,7 @@
 %Préface
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\chapter{Introduction}
-\chapter*{Préface} \addcontentsline{toc}{chapter}{Préface}  %Tout ce bazar permet d'avoir l'intro dans la table des matières sans la numéroter
+\chapter*{Préface} \addcontentsline{toc}{chapter}{Préface}  %Tout ce bazar permet d'avoir le bousin dans la table des matières sans le numéroter
 \markboth{Préface}{Préface}
 
 	\input{../leo/preface_leo.tex}
@@ -445,7 +326,7 @@
 %Annexe
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %décommenter la ligne suivante si besoin :
-\appendix
+%\appendix
 
 
 
