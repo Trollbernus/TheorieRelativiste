@@ -1,0 +1,268 @@
+\chapter{Problème à $N$ corps en relativité générale}
+
+	\section{Introduction}
+
+		Le problème à $N$ corps gravitationnel consiste à prédire le mouvement de $N$ corps en interaction gravitationnelle connaissant leurs positions et vitesses à un instant donné. 
+
+
+	\section{Description géométrique relativiste du problème à $N$ corps}
+
+		\subsection{Introduction et notations}
+			Avant tout calcul prédictif il faut préciser le cadre géométrique dans lequel nous travaillons. En effet, les hypothèses physiques ont des manifestations géométriques, ce qui est très naturel dans une théorie comme la relativité générale. 
+
+			Les lettres grecques minuscules $\alpha,\beta,\ldots$ désignes les 4 coordonnées $0,1,2,3$ de l'espace temps alors que les lettres latines minuscules $a,b,\ldots$ renvoient aux coordonnées spatiales $1,2,3$. Les convention de sommation d'Einstein sont bien évidemment adoptées sur les lettres grecques, mais aussi sur les lettres latines : ainsi,
+			\begin{equation}
+				A_iB^i = A_1B^1 + A_2B^2+A_3B^3
+			\end{equation}
+			mais nous posons également
+			\begin{equation}
+				A^iB^i=\delta_{ij}A^iB^j=A^1B^1+A^2B^2+A^3B^3.
+			\end{equation}
+			Nous serons amenés à faire des développements limités en $1/c$. C'est pourquoi nous adoptons les notations compactes suivantes. Pour tout champ scalaire $\Phi$,
+			\begin{equation}
+				\Phi = O(c^{-n}) \quad \Leftrightarrow \quad \Phi=O(n).
+			\end{equation}
+			Pour tout 4-vecteur de coordonnées $A^\mu$,
+			\begin{equation}
+				A^0=O(p)\quad\text{et}\quad A^i=O(q) \quad \Leftrightarrow \quad A^\mu=O(p,q). 
+			\end{equation}
+			Pour tout tenseur de rang 2 et de coordonnées $T^{\mu\nu}$,
+			\begin{equation}
+				T^{00}=O(p), \quad T^{0i}=O(q), \quad T^{i0}=O(q)\quad T^{ij}=O(r) \quad \Leftrightarrow \quad T^{\mu\nu}=O(p,q,r).
+			\end{equation}
+
+
+		\subsection{Choix du système de coordonnées}
+			Dans le cadre d'une théorie relativiste, nous faisons l'hypothèse (forte) que les corps évoluent dans une variété $\mathscr{V}$  différentiable de dimension 4 parcourue par $N$ lignes d'univers $\mathscr{L}_A,\, A\in\{1,\ldots,N\}$. Soit $\mathscr{T}_A\subset \mathscr{V}$ un voisinage ouvert de $\mathscr{L}_A$. Soit $X^\mu_A$ un système de coordonnées décrivant $\mathscr{T}_A$ adapté à $\mathscr{L}_A$, c'est-à-dire qu'un paramétrage possible de $\mathscr{L}_A$ dans $\mathscr{T}_A$ est $X^\mu(P(s)\in\mathscr{L}_A)=(s,0,0,0),\, s\in\mathbb{R}$. La base naturelle associée à ce système de coordonnées le long de $\mathscr{L}_A$ est définie de la façon suivante :
+			\begin{equation}
+				e^A_\mu}(s) = \left.\frac{\partial}{\partial X_A^\mu}\right|_{P(s)\in\mathscr{L}_A}.
+			\end{equation}
+			Nous ajoutons aux $N$ systèmes de coordonnées adaptés aux $N$ lignes d'univers le système de coordonnées suivant. Nous supposons qu'il existe un système de coordonnées global décrivant tout $\mathscr{V}$ (donc incluant tous les $\mathscr{T}_A$) que nous noterons $x^\mu$. L'objet de toute cette section sera de décrire le changement de coordonnées de $X_A^\mu$ à $x^\mu$. À présent, considérons les $N$ changements de coordonnées :
+			\begin{equation}
+				x^\mu = f^\mu_A(X^\nu_A).
+			\end{equation}
+			Nous allons paramétriser ce changement de coordonnées en posant les définitions suivantes :
+			\begin{equation}
+				z^\mu_A (s) \equiv f^\mu(s,0,0,0)
+			\end{equation}
+			\begin{equation} \label{def_e_diff}
+				e^\mu_{A,\nu}(s)\equiv \left.\frac{\partial f^\mu_A}{\partial X^\nu_A}\right|_{X^\mu=(s,0,0,0)}=\left.\frac{\partial f^\mu_A}{\partial X^\nu_A}\right|_{P(s)\in\mathscr{L}_A}
+			\end{equation}
+			\begin{equation}
+				\xi^\mu_A(X^\nu_A)\equiv f^\mu_A(X^\nu_A)-f^\mu_A(s,0,0,0)-e^\mu_{A,j}X_A^j
+			\end{equation}
+
+			$z^\mu_A(s)$ n'est donc rien d'autre que la représentation paramétrique, dans le système de coordonnées $s^\mu$, de la ligne d'univers $\mathscr{L}_A$ paramétrisée par $s$.
+
+			De ce fait, nous remarquons que
+			\begin{equation}
+				e^A_\mu}(s) = \left.\frac{\partial}{\partial X_A^\mu}\right|_{\mathscr{L}_A}=e^\nu_{A,\mu}e^A_\mu}(s) = \left.\frac{\partial}{\partial x^\nu}\right|_{\mathscr{L}_A}.
+			\end{equation}
+			Remarquons également que
+			\begin{equation}
+				e^\mu_{A,0}=\frac{\d z^\mu_A}{\d s}.
+			\end{equation}
+			Avec ces notations, le changement de coordonnées s'écrit de la façon suivante :
+			\begin{equation}
+				x^\mu(X^\nu}) = z^\mu(X^0)+e^\mu_{\phantom{x}i}X^i + \xi^\mu(X^\nu})
+			\end{equation}
+			où nous avons sous-entendu l'indice $A$ pour éviter d'alourdir les notations. Comme nous supposons que toutes les fonctions considérées sont différentiables\footnote{Probablement l'hypothèse la plus lourde de toute la théorie de la relativité générale...}, cette dernière relation combinée avec la partie spatiale de définition \ref{def_e_diff} nous prouvent que
+			\begin{equation}
+				\xi^\mu(X^\nu}) = O((X^i)^2)
+			\end{equation}
+			quand $X^i\rightarrow 0$ pour $X^0$ fixé.
+			La matrice jacobienne de ce changement de variables, dont nous définissons les coordonnées ainsi :
+			\begin{equation}
+				A^\mu_{\phantom{x}\nu}\equiv\frac{\partial x^\mu}{\partial x^\nu}
+			\end{equation}
+			s'écrit
+			\begin{equation}
+				A^\mu_{\phantom{x}0}=e^\mu_{\phantom{x}0}(s) + \frac{\d e^\mu{\phantom{x}i}(s)}{\d s} X^i + \frac{\partial \xi ^\mu}{\partial s}
+			\end{equation}
+			\begin{equation}
+				A^\mu_{ \ k}=e^\mu_{\phantom{x}k}(s)+\frac{\partial \xi^\mu}{\partial X^k}
+			\end{equation}
+			Remarquons que jusqu'ici toutes les définitions se passent du tenseur métrique et sont purement topologiques. À présent il est temps d'introduire les hypothèses physiques du modèle et leur manifestations dans la courbure de l'espace-temps.
+
+		\subsection{Hypothèses physiques du modèle}
+			Nous supposons que les corps sont lents devant la vitesse de la lumière, et aussi qu'ils génèrent de faibles champs gravitationnels, c'est-à-dire modifiant peu le tenseur métrique par rapport au tenseur métrique de Minkowski dont nous notons les coordonnées $\eta_{\mu\nu}$.
+			L'hypothèse du mouvement lent s'écrit
+			\begin{equation}
+				\frac{\d z^i}{\d s} = \frac{\d z^i}{c \, \d \tau} = O(1)
+			\end{equation}
+			L'hypothèse du champ faible combinée avec l'hypothèse du mouvement lent nous amène à supposer qu'il existe $N+1$ systèmes de coordonnées $x^\mu$ et $X^\mu_A,\ A\in\{1,\ldots,N\}$ tels qu'en chacun de ces systèmes de coordonnées, le tenseur métrique vérifie :
+			\begin{equation}\label{hyp_g}
+				g_{\mu\nu}(x^\alpha)-\eta_{\mu\nu}=h_{\mu\nu}(x^\alpha)=O(2,3,2),
+			\end{equation}
+			\begin{equation}\label{hyp_G}
+				G^A_{\mu\nu}(X^\alpha_A)-\eta_{\mu\nu}=H^A_{\mu\nu}=O(2,3,2).
+			\end{equation}
+			L'hypothèse du mouvement lent s'écrit ainsi :
+			\begin{equation}
+				A^\mu_{\ \nu}=O(0,1,0).
+			\end{equation}
+			Ces hypoythèses peuvent d'emblée mener à quelques résultats intéressants. La loi de transformation des composantes du tenseur métrique s'écrit
+			\begin{equation}
+				G_{\alpha\beta}=A^\mu_{\ \alpha}A^\nu_{\ \beta}g_{\mu\nu}
+			\end{equation}
+			Les hypothèses \ref{hyp_g} et \ref{hyp_G} conduisent immédiatement à 
+			\begin{equation}\label{pn_contrainte}
+				\eta_{\mu\nu}A^\mu_{\ \alpha}A^\nu_{\ \beta} = \eta_{\alpha\beta}+O(2,3,2).
+			\end{equation}
+			Le tenseur métrique ayant disparu, cette relation ne donne que des contraintes mathématiques sur la structure du changement de coordonnées $x^\mu=f^\mu(X^\nu)$. La relation \ref{pn_contrainte} étant vraie pour tous $X^i$, nous pouvons effectuer un développement limité et obtenir des égalités correspondantes aux ordres $O((X^i)^0)$, $O((X^i)^1)$ et $O((X^i)^2)$. Pour simplifier les notations, nous notons $O((X^i)^n)\equiv O(X^n)$. Comme nous avons 
+			\begin{equation}
+				A^\mu_{\ \nu}=e^\mu_{\ \nu}+O(X) 	
+			\end{equation}
+			l'ordre $O(X^0)$ de l'équation \ref{pn_contrainte} implique que
+			\begin{equation}\label{o_z_pn_a}
+				\eta_{\mu\nu}e^\mu_{\ \alpha}e^\nu_{\ \beta}=\eta_{\alpha\beta}+O(2,3,2).
+			\end{equation}
+
+			La composante $(\alpha,\beta)=(0,0)$ de \ref{o_z_pn_a} donne 
+			\begin{equation}
+				-e^0_{\ 0}^2 + e^i_{\ 0}e^i_{\ 0} = -1 + O(2)	
+			\end{equation}
+			mais comme $e^i_{\ 0}=\d z^i / \d s = O(1)$, nous pouvons oublier le deuxième terme du membre de gauche et obtenir $e^0_{\ 0}^2=1+O(2)$ ce qui équivaut à 
+			\begin{equation}\label{e_0_0}
+				e^0_{\ 0}=1+O(2)	
+			\end{equation}
+
+			La composante $0a$ de la relation \ref{o_z_pn_a} nous donne
+			\begin{equation}
+				-e^0_{\ a}e^0_{\ 0}+e^i_{\ a}e^i_{\ 0}=O(3)
+			\end{equation}
+			Mais comme $e^0_{\ a}=O(1)$, nous avons, en vertu de \ref{e_0_0},
+			\begin{equation}
+				e^0_{\ a}e^0_{\ 0}=e^0_{\ a}+O(3)
+			\end{equation}
+			et donc
+			\begin{equation}
+				e^0_{\ a}=e^i_{\ a}e^i_{\ 0}+O(3)=e^i_{\ a}\frac{\d z^i}{\d s} + O(3).
+			\end{equation}
+			La composante $ab$ de \ref{o_z_pn_a} donne, grâce à $e^0_{\ a}e^0_{\ b}=O(2)$ :
+			\begin{equation}
+				e^i_{\ a}e^i_{\ b}=\delta_{ab}+O(2).
+			\end{equation}
+			Ensuite, la composante $00$ de l'équation  \ref{pn_contrainte} s'écrit
+			\begin{equation}\label{dev_pn_contrainte}
+				-\left(e^0_{\ 0}+ \frac{\d e^i_{\ a}}{\d s} X^a \right)^2 + \left( e^i_{\ 0} + \frac{\d e^i_{\ a}}{\d s} X^a \right)\left( e^i_{\ 0} + \frac{\d e^i_{\ a}}{\d s} X^a \right)=-1+O(2).
+			\end{equation}
+			Tenant compte de ceci et ne gardant que l'ordre $O(X)$ de l'équation \ref{dev_pn_contrainte}, nous obtenons :
+			\begin{equation}
+				-e^0_{\ 0}\frac{\d e^i_{\ a}X^a} + 2 e^i_{\ 0}\frac{\d e^i_{\ a}}{\d s}X^a=O(2)
+			\end{equation}
+			Par ailleurs, nous avons
+			\begin{equation}
+				\frac{\d}{\d s}={\d}{c\, \d \tau}=O(1).
+			\end{equation}
+			et $e^i_{\ 0}=O(1)$ donc $e^i_{\ 0}\d e^i_{\ a}/\d s=O(2)$ ; de plus, $e^0_{\ 0}=1+O(2)$ ; nous en déduisons :
+			\begin{equation}
+				\frac{\d e^i_{\ a}}{\d s}=O(2).
+			\end{equation}
+
+
+
+
+
+	\section{Action du problème à $N$ corps}
+
+		Nous souhaitons obtenir les équations du mouvement à partir d'un principe variationnel. Pour cela nous devons décrire l'action du champ gravitationnel ainsi que l'action de la matière des corps en mouvement. L'action du champ gravitationnel a déjà été discutée au chapitre \ref{action_champ} de la partie 1 :
+		\begin{equation}
+			S_g = \int R \sqrt{-g} \, \d^4 \bm{x}
+		\end{equation}
+
+		\subsection{Densité invariante, masses des corps}
+
+			Soit un champ de matière quelconque décrit par une densité de masse locale au repos $\rho$. Considérons un référentiel comobile avec la matière en un point $\bm{r}$ donné de l'espace. Dans ce référentiel, entre $t$ et $t+dt$ la masse totale contenue dans un élément de volume ne doit pas varier :
+			\begin{equation}
+				\frac{\d(\rho \, d^3\bm{x})}{\d t} = 0
+			\end{equation}
+			En faisant un bilan sur l'élément de volume $\d^3\bm{v}$ il est aisé de montrer que dans le référentiel comobile cette équation est équivalente à l'équation de continuité :
+			\begin{equation}
+				\rho_{,t} + (\rho v^i)_{,i} = 0		
+			\end{equation}	
+			Lors d'un changement local de référentiel via une transformation de Lorentz, cette équation devient simplement :
+			\begin{equation}
+				(\rho u^\mu)_{,\mu}=0
+			\end{equation}
+			Pour passer en espace courbe il suffit d'écrire :
+			\begin{equation}
+				(\rho u^\mu)_{;\mu}=0
+			\end{equation}
+			Or comme pour tout 4-vecteur $A^\mu$, nous avons 
+			\begin{equation}
+				(A^\mu)_{;\mu}=\frac{1}{\sqrt{-g}}(\sqrt{-g}A^\mu)_{,\mu}
+			\end{equation}
+			nous en déduisons, avec $u^i=u^0v^i$ :
+			\begin{equation}
+				(\rho\sqrt{-g}u^0)_{,0}+(\rho\sqrt{-g}u^0v^i)_{,i}=0
+			\end{equation}
+			de telle sorte que la densité conservée $\rho^*$ définie par
+			\begin{equation}
+				\rho^*\equiv \rho \sqrt{-g}u^0
+			\end{equation}
+			vérifie l'équation de continuité
+			\begin{equation}
+				\rho^*_{,t}+(\rho^*v^i)_{,i}=0
+			\end{equation}
+			pour un système de coordonnées $(t,\bm{x})$ quelconque.
+
+			On en déduit que pour toute fonction $f(\bm{x},t)$ s'annulant au delà du volume $V$, nous avons :
+			\begin{equation}
+				\frac{\d}{\d t} \int_V \rho^* f(\bm{x},t) \, \d^3\bm{x} = \int_V \rho^* \frac{\d f}{\d t} \,\d^3\bm{x} 
+			\end{equation}
+
+			En posant $f\equiv 1$ nous pouvons définir la masse invariante d'un corps $A$ :
+			\begin{equation}
+				M_A = \int_A \rho^* \d^3\bm{x} = \int_A \rho \sqrt{-g} u^0 \, \d^3\bm{x}
+			\end{equation}
+
+			La masse invariante d'un système physique $\mathscr{S}$ s'exprime donc de la façon suivante :
+			\begin{equation}
+				M_{\mathscr{S}}=\int_{\mathscr{S}} \rho \sqrt{-g} u^0 \, \d^3\bm{x} 
+			\end{equation}
+			et son énergie au repos est simplement $M_\mathscr{S}c^2$. Du point de vue d'un observateur $\mathscr{O}$ de temps propre $s$ ayant choisi un système de coordonnées $t,\bm{x}$, il semble naturel d'intégrer cette énergie invariante le long de sa ligne d'univers entre deux dates pour définir l'action de la matière mesurée par $\mathscr{O}$. Nous posons donc :
+			\begin{equation}
+				S_m = \alpha \int \int c^2 \rho \sqrt{-g} u^0 \, \d^3\bm{x} \, \d s_\mathscr{O} = \int c^2 \rho \sqrt{-g} \, \d^4\bm{x} 
+			\end{equation}
+			où $\alpha$ est une constante multiplicative. Pour trouver $\alpha$, nous demandons que cette action très générale coïncide avec le cas particulier de l'action de $N$ corps ponctuels qui n'interagissent pas :
+			\begin{equation}
+				S_{N\phantom{l}corps}=\sum_A M_A c^2 \int \d s_A
+			\end{equation}
+			où $M_A$ est la masse invariante au repos du corps $A$
+
+			Pour retrouver cette action, nous pouvons découper l'intégration volumique sur chaque corps et écrire :
+			\begin{equation}
+				S_{N\phantom{l}corps}= \alpha c^2 \sum_A \int \left( \int_A \rho \sqrt{-g} u^0 \, \d^3\bm{x} \right) \d x^0 = \sum_A \alpha c^2 \int \rho_A \sqrt{-g} u^0 \d^4\bm{x}
+			\end{equation}
+			Comme le corps $A$ est supposé ponctuel\footnote{Nous étudierons les corps non ponctuels très bientôt...}, $\rho$ est proportionnel à $\delta^3(\bm{x}-\bm{x}_A)$, de telle sorte qu'il est licite d'écrire :
+			\begin{equation}
+				M_A = \int_A \rho \sqrt{-g} u^0 \, \d^3\bm{x} = u^0_A \int_A \rho \sqrt{-g} \, \d^3\bm{x} 
+			\end{equation}
+			où $u^\mu_A$ est la quadrivitesse du point $A$. Ainsi, nous obtenons :
+			\begin{equation}
+				S_{N\phantom{l}corps}=sum_A \alpha c^2 \int M_A \frac{\d x^0}{u^0_A} = \sum_A \alpha c^2 M_A \int \d s_A
+			\end{equation}
+			qui coïncide avec l'expression de l'action de $N$ corps ponctuels non interagissant en posant $\alpha=1$.
+			Ainsi l'action totale de la matière d'un système physique donné s'écrit :
+
+
+	\section{Template}
+		\begin{post}
+			postulat
+		\end{post}
+		\begin{theorem}
+			théorème
+		\end{theorem}
+
+		\begin{proof}
+			preuve
+			\end{proof}
+
+
+		\begin{figure}
+			\centering
+			\includegraphics[scale=0.07]{figures/figure.jpg}
+			\caption{Figure}
+		\label{fig}
+		\end{figure}

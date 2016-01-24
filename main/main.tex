@@ -1,0 +1,455 @@
+%Pour compiler ce fichier avec bibtex :
+%pdflatex 150611_raport.tex
+%bibtex 150611_raport.aux
+%pdflatex 150611_raport.tex
+%pdflatex 150611_raport.tex
+
+%lien dropbo : https://www.dropbox.com/s/c7n7242xsq36t4y/20140816_rapport.pdf
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%        Packages utilisés                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+	%[twoside,12pt]
+
+	%\documentclass[french,12pt]{report} %pour une police de 12 au cas où
+	\documentclass[french]{book} %{report}
+
+
+	\usepackage[T1]{fontenc}
+	\usepackage[utf8]{inputenc} %Permet d'utiliser des caractères spéciaux : éèàçù etc. plus sûr que \usepackage[latin9]{inputenc}
+	%\usepackage[latin9]{inputenc}
+
+	\usepackage[french]{babel}
+
+	\usepackage{geometry} %Personnaliser l'aspect géométrique du document.
+	\geometry{top=3cm, bottom=3cm, left=3cm , right=3cm} %plus simple que le suivant, que je ne maîtrise pas...
+	%\geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=1.5cm,rmargin=1.5cm,headheight=2.5cm,headsep=2.5cm,footskip=2.5cm}
+	
+	\usepackage{amstext} %??
+	\usepackage{graphicx} %??
+	%\usepackage{amsmath} %Utilisé plus bas
+	\usepackage{amssymb} %??
+	\usepackage{hyperref} %Celui-là il est surpuissant : il fait tous les liens hypertexte et intratexte. [hidelinks]==> pas de couleur 
+	\hypersetup{colorlinks=false }
+	%\hypersetup{hidelinks}
+
+
+	\usepackage[footnotesize]{caption} %Moarf. Dans le doute je le garde.
+	%\usepackage{graphicx}
+	\usepackage{amsmath, amssymb} %oui mais ???
+	%\usepackage[applemac]{inputenc}
+	%\usepackage[T1]{fontenc}
+	\usepackage{color} %???
+	%\usepackage{times} %permet de choisir la police, mais la Latin Modern est tellement belle que je n'y touche pas.
+	%\usepackage[francais]{babel} %déjà utilisé.
+	%\usepackage{fullpage} %définit tout une mise en page qui bousille le package geometry !!!! ==> je ne l'utilise pas.
+
+	\usepackage{natbib} %Pour la bibliographie ?
+	\usepackage{colortbl} %pour les couleurs
+
+	\usepackage[french]{minitoc} % papy : pour créer une table des matières juste avant l'annexe. Toujours pas réussi à utiliser ce truc infernal.
+	\usepackage{tocloft}  
+	\usepackage{titletoc}  
+	\usepackage{appendix} %papy : utiliser la commande \appendix 
+	\usepackage{eurosym} %papy : pour ajouter le symbole € en tapant \euro
+	%\usepackage{minitoc}
+	\usepackage{colortbl} %papy : pour les couleurs du tableau
+	\usepackage{lipsum}
+	\usepackage{amsthm} %théorèmes, etc.
+	\usepackage{stmaryrd} %crochets d'entiers
+	\usepackage{empheq} %équations encadrées
+	\usepackage{mathrsfs}  %zoulies majuscules
+
+	\usepackage{yfonts} %gothique ; utiliser la commande : \textgoth{ABCdef123} ou \textswab{ABCdef123}.
+
+	\usepackage{bm} %\bm{truc} = truc en gras mais avec la bonne police
+
+
+	%\usepackage{fancyhdr} %bas de pages %Plüthaar.
+	%\pagestyle{fancy}
+
+
+	\makeatletter
+
+	%%%%%%%%%%%%%%%%quelques commandes dont je n'ai pas encore saisi l'utilité.
+	\def \eps {\varepsilon}
+	\def\percent{\%}
+	\def\etal{{et al.}}
+
+
+
+	%%%%%%%%%%%Commandes pour la bibliographie.
+		\def\aj{\textit{The Astronomical Journal}}
+
+
+		\def\nat{\textit{Nature}}
+		\def\icarus{\textit{Icarus}}
+		\def\aap{\textit{Astronomy and Astrophysics}}
+		\def\grl{\textit{Geophysical Research Letters}}
+		\def\jgr{\textit{Journal of Geophysical Research}}
+
+
+
+
+
+	\newcommand{\figpath}{figures/}
+	\newcommand{\bibpath}{/Volumes/USER/robutel/Phil/Articles/base/}
+
+
+
+
+
+
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.%%% ==> et ???
+	\DeclareRobustCommand{\greektext}{%
+	  \fontencoding{LGR}\selectfont\def\encodingdefault{LGR}}
+	\DeclareRobustCommand{\textgreek}[1]{\leavevmode{\greektext #1}}
+	\DeclareFontEncoding{LGR}{}{}
+	\DeclareTextSymbol{\~}{LGR}{126}
+	\newcommand{\lyxmathsym}[1]{\ifmmode\begingroup\def\b@ld{bold}
+	  \text{\ifx\math@version\b@ld\bfseries\fi#1}\endgroup\else#1\fi}
+
+
+	\makeatother
+
+
+
+	\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%Théorèmes, démonstrations, etc.
+	%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%Théorèmes, démonstrations, etc.
+	%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\newtheorem{post}{Postulat}[section]
+	\newtheorem{theorem}{Theorème}[section]
+	\newtheorem{lemma}{Lemme}[section]
+	\newtheorem{definition}{Définition}[section]
+	\newtheorem{cor}{Corrolaire}[section]
+	\newtheorem{prop}{Proposition}[section]
+	\newtheorem{conj}{Conjecture}[section]
+	\theoremstyle{plain}
+	\renewcommand{\qedsymbol}{\textit{Q.E.D.}}
+
+
+
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ù
+	%
+	%typographie matheuse
+	%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    %\newcommand{\d}{\mathop{}\mathrm{d}}
+	\def\d{\mathrm{d}}
+	\def\e{\mathrm{e}}
+	\def\i{\mathrm{i}}
+
+
+
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%bas de page, haut de page
+	%        etc.
+	%		Plüthaar.
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	%\renewcommand{\headrulewidth}{1pt}
+	%\fancyhead[C]{\textbf{page \thepage}} 
+	%\fancyhead[L]{\leftmark}
+	%\fancyhead[R]{machin}
+
+	%\renewcommand{\footrulewidth}{1pt}
+	%\fancyfoot[C]{Léo BERNUS} 
+	%\fancyfoot[L]{truc}
+	%\fancyfoot[R]{\leftmark}
+
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                    %
+%                          Page de garde                             %
+%                                                                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+	\begin{titlepage}
+
+	\begin{center}
+
+
+	%%%%%%%%%%%%%
+	%  Logos    %
+	%%%%%%%%%%%%%
+
+
+
+	\begin{center}
+		%\includegraphics[width = 40mm]{../logos/SANSELIPS.jpg} \hfill
+		%\includegraphics[width = 40mm]{../logos/logo_IMCCE_small.jpg} \hfill
+		%\includegraphics[width = 40mm]{../logos/logo_iap.jpg} \hfill
+%		\includegraphics[width = 40mm]{../logos/UPMC_pantones_7504-166.jpg} \hfill    
+
+	\end{center}
+
+
+
+
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%   Code pour zoulie page de garde. NE PAS TOUCHER !!!!!!!!!    %
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+	%%%%%%%%%%%%%%%%%
+	%Si ce modèle de page de garde ne te plaît pas, cherches-en d'autres.
+	%%%%%%%%%%%%%%%%%
+
+
+
+
+
+	\begin{minipage}[t]{0.3\textwidth}
+	  \begin{flushleft}
+	    
+	    
+	  \end{flushleft}
+	\end{minipage}
+	\begin{minipage}[t]{0.3\textwidth}
+	  \begin{center}
+	    
+	  \end{center}
+	\end{minipage}
+	\begin{minipage}[t]{0.3\textwidth}
+	  \begin{flushright}
+	       
+	  \end{flushright}
+	\end{minipage}
+	\\[1cm]
+
+
+	%\textsc{\Large Stage - M2 DSG - Observatoire de Paris}\\[0.6cm]
+	\HRule \\[0.8cm]
+	{\huge  Théorie de la relativité générale \\ et applications physiques }\\[0.4cm]
+	\HRule \\[1cm]
+
+	Auteurs : \\
+
+	Léo Bernus (Observatoire de Paris, IMCCE (bientôt)) \\
+	Loïc Chantry (Observatoire de Paris, LUTH) \\
+	Olivier Coquand (LPTHE) \\
+	Raphaël D. Lasseri (IPN)
+
+	%\begin{minipage}[t]{0.3\textwidth}
+	  %\begin{flushleft} \large
+	    %\emph{Étudiant :}\\
+	    %Léo Bernus\\
+			%M1 Phytem \\ 
+			%Observatoire de Paris\\
+			%M2 AAIS DSG
+			%Stage effectué à l'IMCCE,\\
+			%77~avenue Denfert~Rochereau, \\ 75014 Paris.
+	  %\end{flushleft}
+	%\end{minipage}
+	%\begin{minipage}[t]{0.6\textwidth}
+	  %\begin{flushright} \large
+	    %\emph{Encadrant :} \\
+ 	    %Jacques Laskar \\
+	    %Observatoire de Paris \\
+	    %IMCCE \\
+	    %\vspace{0.5cm}
+	    %\emph{Co-encadrant :}\\
+	    %Luc Blanchet \\
+	    %IAP
+
+
+	  %\end{flushright}
+
+	%\end{minipage}
+	%\\[2cm]
+
+
+
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%      Images pour la page de garde    %
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+	%%%Ça c'est pas pour moi mais je le garde on sait jamais..
+
+	%\begin{minipage}[t]{0.6\textwidth}
+	%  \begin{flushcenter} \large
+	%    \emph{date de remise du rapport :} \\
+	%    35 décembre 2048
+	%  \end{flushcenter}	
+	%\end{minipage}
+	%\\[2cm]
+	%
+
+
+
+	%\begin{center}
+	  %\includegraphics[scale=0.965]{mimas_noire_2.jpg} \\ %\hfill
+	  %\includegraphics[width = 72mm]{mimas_rings.jpg} \hfill
+	  %\includegraphics[width = 40mm]{UPMC_pantones_7504-166.jpg} \hfill
+	  %\includegraphics[width = 35mm]{ens.jpg} 
+	%\end{center}
+
+
+
+
+
+	{\large   \today }
+
+
+
+
+
+
+	\vfill
+
+
+
+	\end{center}
+
+	\end{titlepage}
+
+
+
+
+
+	\pagebreak{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Préface
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\chapter{Introduction}
+\chapter*{Préface} \addcontentsline{toc}{chapter}{Préface}  %Tout ce bazar permet d'avoir l'intro dans la table des matières sans la numéroter
+\markboth{Préface}{Préface}
+
+	\input{../leo/preface_leo.tex}
+	\input{../olivier/preface_olivier.tex}
+	\input{../loic/preface_loic.tex}
+	\input{../raphael/preface_raphael.tex}
+
+
+\pagebreak
+
+	\setcounter{tocdepth}{1} %définir la profondeur de la table des matières. 0 => tout ce qui est en dessous des sections ne sera pas compté.
+	\tableofcontents
+
+
+
+
+
+	\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Intro
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\chapter{Introduction}
+\chapter*{Introduction} \addcontentsline{toc}{chapter}{Introduction}  %Tout ce bazar permet d'avoir l'intro dans la table des matières sans la numéroter
+\markboth{Introduction}{Introduction}
+
+	Corps de l'introduction.
+
+
+\pagebreak
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%
+%  corps du texte  %
+%%%%%%%%%%%%%%%%%%%%
+
+\part{Théorie de la Relativité Générale : généralités.}
+
+	\chapter*{Introduction} \addcontentsline{toc}{chapter}{Introduction}  %Tout ce bazar permet d'avoir l'intro dans la table des matières sans la numéroter
+	\markboth{Introduction}{Introduction}
+
+		Corps de l'introduction.
+
+		\input{../cours/cours.tex}
+
+	\pagebreak
+
+
+\part{Applications physiques, développements}
+
+
+	\input{../leo/pb_n_corps.tex}
+
+	\input{../olivier/forces_inertie.tex}
+
+	\input{../loic/mhd.tex}
+
+	\input{../raphael/rgq.tex}
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Intro
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\chapter{Introduction}
+\chapter*{Conclusion} \addcontentsline{toc}{chapter}{Conclusion}  %Tout ce bazar permet d'avoir l'intro dans la table des matières sans la numéroter
+\markboth{Conclusion}{Conclusion}
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Bibliographie
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\bibliographystyle{plain}
+\bibliographystyle{plainnat.bst}
+\bibliography{../bibfile/bibfile.bib}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Annexe
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%décommenter la ligne suivante si besoin :
+\appendix
+
+
+
+
+
+\end{document}
+
