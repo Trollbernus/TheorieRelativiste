@@ -1,4 +1,4 @@
-# TheorieRelativiste
+# Theorie Relativiste
 Grâce à la commande \input{fichier.tex}, chacun peut bosser de son côté sur la partie qui le concerne.
 Il vous suffit donc de modifier les fichiers dans les répertoires qui portent votre nom. Si les noms des fichiers ne vous conviennent pas
 et que vous les changez, pensez à les changer aussi dans ./main/main.tex
