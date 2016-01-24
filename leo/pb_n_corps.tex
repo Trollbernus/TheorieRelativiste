@@ -2,7 +2,7 @@
 
 	\section{Introduction}
 
-		Le problème à $N$ corps gravitationnel consiste à prédire le mouvement de $N$ corps en interaction gravitationnelle connaissant leurs positions et vitesses à un instant donné. 
+		Le problème à $N$ corps gravitationnel consiste à prédire le mouvement de $N$ corps en interaction gravitationnelle connaissant leurs positions et vitesses à un instant donné. Dans ce chapitre, nous allons montrer comment traîter ce problème avec le cadre de la théorie de la relativité générale. Contrairement à la théorie newtonienne, la première étape du problème à $N$ corps qui consiste à obtenir les équations du mouvement est beaucoup moins aisée. C'est surtout à cela que sera consacré ce chapitre. Une fois les équations du mouvement obtenues, leur résolution est un problème purement mathématique (ou numérique). L'objet de cet ouvrage se concentrant plus sur la théorie de la relativité générale, nous n'exposerons pas les méthodes de résolutions des équations du mouvement dans le détail. La dernière section de ce chapitre résumera les dernières avancées en terme de résolution, en accentuant l'aspect relativiste de la chose. Des références seront données pour qui compte approfondir ce problème.
 
 
 	\section{Description géométrique relativiste du problème à $N$ corps}
@@ -12,11 +12,11 @@
 
 			Les lettres grecques minuscules $\alpha,\beta,\ldots$ désignes les 4 coordonnées $0,1,2,3$ de l'espace temps alors que les lettres latines minuscules $a,b,\ldots$ renvoient aux coordonnées spatiales $1,2,3$. Les convention de sommation d'Einstein sont bien évidemment adoptées sur les lettres grecques, mais aussi sur les lettres latines : ainsi,
 			\begin{equation}
-				A_iB^i = A_1B^1 + A_2B^2+A_3B^3
+				A_iB^i \equiv A_1B^1 + A_2B^2+A_3B^3
 			\end{equation}
 			mais nous posons également
 			\begin{equation}
-				A^iB^i=\delta_{ij}A^iB^j=A^1B^1+A^2B^2+A^3B^3.
+				A^iB^i \equiv \delta_{ij}A^iB^j=A^1B^1+A^2B^2+A^3B^3.
 			\end{equation}
 			Nous serons amenés à faire des développements limités en $1/c$. C'est pourquoi nous adoptons les notations compactes suivantes. Pour tout champ scalaire $\Phi$,
 			\begin{equation}
@@ -30,7 +30,13 @@
 			\begin{equation}
 				T^{00}=O(p), \quad T^{0i}=O(q), \quad T^{i0}=O(q)\quad T^{ij}=O(r) \quad \Leftrightarrow \quad T^{\mu\nu}=O(p,q,r).
 			\end{equation}
-
+			Enfin, nous utilisons la convention des parenthèses pour symétriser un tenseur et des crochets pour l'antisymétriser :
+			\begin{equation}\label{parent_sym}
+				T^{(\mu\nu)}\equiv\frac{1}{2}(T^{\mu\nu}+T^{\nu\mu})
+			\end{equation}
+			\begin{equation}
+				T^{[\mu\nu]}\equiv\frac{1}{2}(T^{\mu\nu}-T^{\nu\mu})
+			\end{equation}
 
 		\subsection{Choix du système de coordonnées}
 			Dans le cadre d'une théorie relativiste, nous faisons l'hypothèse (forte) que les corps évoluent dans une variété $\mathscr{V}$  différentiable de dimension 4 parcourue par $N$ lignes d'univers $\mathscr{L}_A,\, A\in\{1,\ldots,N\}$. Soit $\mathscr{T}_A\subset \mathscr{V}$ un voisinage ouvert de $\mathscr{L}_A$. Soit $X^\mu_A$ un système de coordonnées décrivant $\mathscr{T}_A$ adapté à $\mathscr{L}_A$, c'est-à-dire qu'un paramétrage possible de $\mathscr{L}_A$ dans $\mathscr{T}_A$ est $X^\mu(P(s)\in\mathscr{L}_A)=(s,0,0,0),\, s\in\mathbb{R}$. La base naturelle associée à ce système de coordonnées le long de $\mathscr{L}_A$ est définie de la façon suivante :
@@ -52,11 +58,11 @@
 				\xi^\mu_A(X^\nu_A)\equiv f^\mu_A(X^\nu_A)-f^\mu_A(s,0,0,0)-e^\mu_{A,j}X_A^j
 			\end{equation}
 
-			$z^\mu_A(s)$ n'est donc rien d'autre que la représentation paramétrique, dans le système de coordonnées $s^\mu$, de la ligne d'univers $\mathscr{L}_A$ paramétrisée par $s$.
+			$z^\mu_A(s)$ n'est donc rien d'autre que la représentation paramétrique, dans le système de coordonnées $x^\mu$, de la ligne d'univers $\mathscr{L}_A$ paramétrisée par $s$.
 
 			De ce fait, nous remarquons que
 			\begin{equation}
-				e^A_\mu}(s) = \left.\frac{\partial}{\partial X_A^\mu}\right|_{\mathscr{L}_A}=e^\nu_{A,\mu}e^A_\mu}(s) = \left.\frac{\partial}{\partial x^\nu}\right|_{\mathscr{L}_A}.
+				e^A_\mu}(s) = \left.\frac{\partial}{\partial X_A^\mu}\right|_{\mathscr{L}_A}=e^\nu_{A,\mu}e^A_\nu}(s) = \left.e^\nu_{A,\mu}\frac{\partial}{\partial x^\nu}\right|_{\mathscr{L}_A}.
 			\end{equation}
 			Remarquons également que
 			\begin{equation}
@@ -77,7 +83,7 @@
 			\end{equation}
 			s'écrit
 			\begin{equation}
-				A^\mu_{\phantom{x}0}=e^\mu_{\phantom{x}0}(s) + \frac{\d e^\mu{\phantom{x}i}(s)}{\d s} X^i + \frac{\partial \xi ^\mu}{\partial s}
+				A^\mu_{\phantom{x}0}=e^\mu_{\phantom{x}0}(s) + \frac{\d e^\mu_{\ i}(s)}{\d s} X^i + \frac{\partial \xi ^\mu}{\partial s}
 			\end{equation}
 			\begin{equation}
 				A^\mu_{ \ k}=e^\mu_{\phantom{x}k}(s)+\frac{\partial \xi^\mu}{\partial X^k}
@@ -99,7 +105,7 @@
 			\end{equation}
 			L'hypothèse du mouvement lent s'écrit ainsi :
 			\begin{equation}
-				A^\mu_{\ \nu}=O(0,1,0).
+				A^\mu_{\ \nu}=O(0,1,0). \label{hyp_v}
 			\end{equation}
 			Ces hypoythèses peuvent d'emblée mener à quelques résultats intéressants. La loi de transformation des composantes du tenseur métrique s'écrit
 			\begin{equation}
@@ -141,7 +147,7 @@
 			\end{equation}
 			La composante $ab$ de \ref{o_z_pn_a} donne, grâce à $e^0_{\ a}e^0_{\ b}=O(2)$ :
 			\begin{equation}
-				e^i_{\ a}e^i_{\ b}=\delta_{ab}+O(2).
+				e^i_{\ a}e^i_{\ b}=\delta_{ab}+O(2). \label{rotation_ab}
 			\end{equation}
 			Ensuite, la composante $00$ de l'équation  \ref{pn_contrainte} s'écrit
 			\begin{equation}\label{dev_pn_contrainte}
@@ -149,20 +155,60 @@
 			\end{equation}
 			Tenant compte de ceci et ne gardant que l'ordre $O(X)$ de l'équation \ref{dev_pn_contrainte}, nous obtenons :
 			\begin{equation}
-				-e^0_{\ 0}\frac{\d e^i_{\ a}X^a} + 2 e^i_{\ 0}\frac{\d e^i_{\ a}}{\d s}X^a=O(2)
+				-e^0_{\ 0}\frac{\d e^i_{\ a}X^a}{\d s} + 2 e^i_{\ 0}\frac{\d e^i_{\ a}}{\d s}X^a=O(2)
 			\end{equation}
 			Par ailleurs, nous avons
 			\begin{equation}
-				\frac{\d}{\d s}={\d}{c\, \d \tau}=O(1).
+				\frac{\d}{\d s}=\frac{\d}{c\, \d \tau}=O(1).
 			\end{equation}
 			et $e^i_{\ 0}=O(1)$ donc $e^i_{\ 0}\d e^i_{\ a}/\d s=O(2)$ ; de plus, $e^0_{\ 0}=1+O(2)$ ; nous en déduisons :
 			\begin{equation}
 				\frac{\d e^i_{\ a}}{\d s}=O(2).
 			\end{equation}
+			La composante $ab$ de l'équation \ref{dev_pn_contrainte} s'écrit :
+			\begin{equation}
+				-\left(e^0_{\ a}+\frac{\partial \xi^0}{\partial X^a}\right)\left(e^0_{\ b}+\frac{\partial \xi^0}{\partial X^b}\right)
+				+\left( e^i_{\ a} + \frac{\partial \xi^i}{\partial X^a} \right)\left( e^i_{\ b} + \frac{\partial \xi^i}{\partial X^b} \right)
+				=\delta_{ab}+O(2).
+			\end{equation}
+			L'ordre $O(X))$ de cette équation s'écrit :
+			\begin{equation}\label{o_1_pn_ab}
+				-2e^0_{\ (a}\frac{\partial \xi^0}{\partial X^{b)}}+2e^i_{\ (a}\frac{\partial \xi^i}{\partial X^{b)}}=O(2)
+			\end{equation}
+			où la notation de symétrisation \ref{parent_sym} a été utilisée.
+			Mais comme $A^0_{\ i}=O(1)$, cela est vrai à l'ordre $O(X^0)$ et l'ordre $O(X)$, donc $e^0_{\ i}=O(1)$ et $\partial \xi^0/\partial X^i=O(1)$, et ainsi le premier terme de \ref{o_1_pn_ab} est de l'ordre $O(2)$ et peut être négligé. D'après \ref{rotation_ab}, $e^i_{\ j}=O(0)$. Nous en déduisons que $\partial \xi^i}{\partial X^a}=O(2)$, et comme la dérivation selon $X^a$ ne change pas l'ordre en $1/c$ et que $\xi^\mu$ est quadratique en $X^a$, nous en déduisons que $\xi^\i=O(2)$.
+			La composante $a0$ de l'équation \ref{dev_pn_contrainte} s'écrit :
+			\begin{equation}
+				-\left(e^0_{\ a}+\frac{\partial \xi^0}{\partial X^a}\right)\left( e^0_{\ 0}+\frac{\d e^0_{\ j}}{\d s}X^j +\frac{\partial \xi^0}{\partial s} \right)
+				+\left( e^i_{\ a} + \frac{\partial \xi^i}{\partial X^a} \right)\left( e^i_{\ 0} + \frac{\d e^i_{\ j}}{\d s}X^j +\frac{\partial \xi^i}{\partial s} \right) 
+				= O(3).
+			\end{equation}
+			Cette fois, nous ne gardons que l'ordre $O(X^2)$ de cette équation pour finalement obtenir :
+			\begin{equation}
+				-\frac{\partial \xi^0}{\partial X^a}\frac{\d e^0_{\ j}}{\d s}X^j-e^0_{\ a}\frac{\partial \xi^0}{\partial s} + e^i_{\ a}\frac{\partial \xi^i}{\partial s} + \frac{\partial \xi^i}{\partial s}\frac{\d e^i_{\ j}}{\d s}X^j = O(3)
+			\end{equation}
+			Mais un instant d'analyse montre que le premier terme est de l'ordre $O(3)$ ($\d e^0_{\ a}/\d s=O(3)$, ainsi que le troisième ($\partial \xi^i}{\partial s}=O(3)$) alors que le dernier terme est de l'ordre $O(4)$ (\partial $\xi^i/\partials=O(2)$ et $\d e^i_{\ a}/\d s=O(2)$). Ainsi, il ne reste que
+			\begin{equation}
+				e^0_{\ a}\frac{\partial \xi^P}{\partial s}=O(3)
+			\end{equation}
+			ce qui prouve que $\partial \xi^0/\partial s=O(2)$ et donc que $\xi^0=O(3)$. 
 
+			Résumons les résultats de tout ce paragraphe. Le changement de coordonnées pour passer du repérage local au repérage global est paramétrisé de la façon suivante, ordre par ordre en $O(X)$ :
+			\begin{equation}
+				x^\mu(X^\nu)=z^\mu+e^\mu_{\ i}X^i + \xi^\mu.
+			\end{equation}
+			Dans cette paramétrisation, les approximation post-newtoniennes \ref{hyp_g}, \ref{hyp_G} et \ref{hyp_v} sont mathématiquement équivalentes à la suite d'égalités suivantes :
+			\begin{eqnarray}
+				e^0_{\ 0}(s)&\equiv&\frac{\d z^0}{\d s}=1+O(2) \\
+				e^0_{\ a}(s)&=&e^i_{\ a}(s)\frac{\d z^i}{\d s}+O(3) \\
+				e^i_{\ 0}&\equiv&\frac{\d z^i}{\d s} \\
+				e^i_{\ a}(s)e^i_{\ b}(s)&=&\delta_{ab}+O(2) \\
+				\frac{\d e^i_{\ a}}{\d s}&=&O(2) \\
+				\xi^0&=&O(3) \\
+				\xi^i&=&O(2).
+			\end{eqnarray}
 
-
-
+		\subsection{Coordonnées spatiales cartésiennes, contraintes sur les paramètres $z-e-\xi$}
 
 	\section{Action du problème à $N$ corps}
 
