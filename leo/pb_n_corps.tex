@@ -176,7 +176,7 @@
 				-2e^0_{\ (a}\frac{\partial \xi^0}{\partial X^{b)}}+2e^i_{\ (a}\frac{\partial \xi^i}{\partial X^{b)}}=O(2)
 			\end{equation}
 			où la notation de symétrisation \ref{parent_sym} a été utilisée.
-			Mais comme $A^0_{\ i}=O(1)$, cela est vrai à l'ordre $O(X^0)$ et l'ordre $O(X)$, donc $e^0_{\ i}=O(1)$ et $\partial \xi^0/\partial X^i=O(1)$, et ainsi le premier terme de \ref{o_1_pn_ab} est de l'ordre $O(2)$ et peut être négligé. D'après \ref{rotation_ab}, $e^i_{\ j}=O(0)$. Nous en déduisons que $\partial \xi^i}{\partial X^a}=O(2)$, et comme la dérivation selon $X^a$ ne change pas l'ordre en $1/c$ et que $\xi^\mu$ est quadratique en $X^a$, nous en déduisons que $\xi^\i=O(2)$.
+			Mais comme $A^0_{\ i}=O(1)$, cela est vrai à l'ordre $O(X^0)$ et l'ordre $O(X)$, donc $e^0_{\ i}=O(1)$ et $\partial \xi^0/\partial X^i=O(1)$, et ainsi le premier terme de \ref{o_1_pn_ab} est de l'ordre $O(2)$ et peut être négligé. D'après \ref{rotation_ab}, $e^i_{\ j}=O(0)$. Nous en déduisons que $\partial \xi^i/\partial X^a=O(2)$, et comme la dérivation selon $X^a$ ne change pas l'ordre en $1/c$ et que $\xi^\mu$ est quadratique en $X^a$, nous en déduisons que $\xi^\i=O(2)$.
 			La composante $a0$ de l'équation \ref{dev_pn_contrainte} s'écrit :
 			\begin{equation}
 				-\left(e^0_{\ a}+\frac{\partial \xi^0}{\partial X^a}\right)\left( e^0_{\ 0}+\frac{\d e^0_{\ j}}{\d s}X^j +\frac{\partial \xi^0}{\partial s} \right)
@@ -187,16 +187,17 @@
 			\begin{equation}
 				-\frac{\partial \xi^0}{\partial X^a}\frac{\d e^0_{\ j}}{\d s}X^j-e^0_{\ a}\frac{\partial \xi^0}{\partial s} + e^i_{\ a}\frac{\partial \xi^i}{\partial s} + \frac{\partial \xi^i}{\partial s}\frac{\d e^i_{\ j}}{\d s}X^j = O(3)
 			\end{equation}
-			Mais un instant d'analyse montre que le premier terme est de l'ordre $O(3)$ ($\d e^0_{\ a}/\d s=O(3)$, ainsi que le troisième ($\partial \xi^i}{\partial s}=O(3)$) alors que le dernier terme est de l'ordre $O(4)$ (\partial $\xi^i/\partials=O(2)$ et $\d e^i_{\ a}/\d s=O(2)$). Ainsi, il ne reste que
+			Mais un instant d'analyse montre que le premier terme est de l'ordre $O(3)$ ($\d e^0_{\ a}/\d s=O(2)$ et $\partial \xi^0/\partial X^i=O(1)$), ainsi que le troisième ($\partial \xi^i/\partial s=O(3)$) alors que le dernier terme est de l'ordre $O(4)$ (\partial $\xi^i/\partial s=O(2)$ et $\d e^i_{\ a}/\d s=O(2)$). Ainsi, il ne reste que
 			\begin{equation}
-				e^0_{\ a}\frac{\partial \xi^P}{\partial s}=O(3)
+				e^0_{\ a}\frac{\partial \xi^0}{\partial s}=O(3)
 			\end{equation}
 			ce qui prouve que $\partial \xi^0/\partial s=O(2)$ et donc que $\xi^0=O(3)$. 
 
 			Résumons les résultats de tout ce paragraphe. Le changement de coordonnées pour passer du repérage local au repérage global est paramétrisé de la façon suivante, ordre par ordre en $O(X)$ :
 			\begin{equation}
-				x^\mu(X^\nu)=z^\mu+e^\mu_{\ i}X^i + \xi^\mu.
+				x^\mu(X^\nu)=z^\mu(s)+e^\mu_{\ i}(s)X^i + \xi^\mu(X^\nu).
 			\end{equation}
+			Avec $s\equiv X^0$.
 			Dans cette paramétrisation, les approximation post-newtoniennes \ref{hyp_g}, \ref{hyp_G} et \ref{hyp_v} sont mathématiquement équivalentes à la suite d'égalités suivantes :
 			\begin{eqnarray}
 				e^0_{\ 0}(s)&\equiv&\frac{\d z^0}{\d s}=1+O(2) \\
@@ -209,6 +210,9 @@
 			\end{eqnarray}
 
 		\subsection{Coordonnées spatiales cartésiennes, contraintes sur les paramètres $z-e-\xi$}
+
+			Pour donner des contraintes géométriques supplémentaires, nous allons devoir anticiper un tout petit peu et considérer les équations d'Einstein.
+
 
 	\section{Action du problème à $N$ corps}
 
