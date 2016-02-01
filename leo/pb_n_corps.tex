@@ -10,7 +10,7 @@
 		\subsection{Introduction et notations}
 			Avant tout calcul prédictif il faut préciser le cadre géométrique dans lequel nous travaillons. En effet, les hypothèses physiques ont des manifestations géométriques, ce qui est très naturel dans une théorie comme la relativité générale. 
 
-			Les lettres grecques minuscules $\alpha,\beta,\ldots$ désignes les 4 coordonnées $0,1,2,3$ de l'espace temps alors que les lettres latines minuscules $a,b,\ldots$ renvoient aux coordonnées spatiales $1,2,3$. Les convention de sommation d'Einstein sont bien évidemment adoptées sur les lettres grecques, mais aussi sur les lettres latines : ainsi,
+			Les lettres grecques minuscules $\alpha,\beta,\ldots$ désignent les 4 coordonnées $0,1,2,3$ de l'espace temps alors que les lettres latines minuscules $a,b,\ldots$ renvoient aux coordonnées spatiales $1,2,3$. Les conventions de sommation d'Einstein sont bien évidemment adoptées sur les lettres grecques, mais aussi sur les lettres latines : ainsi,
 			\begin{equation}
 				A_iB^i \equiv A_1B^1 + A_2B^2+A_3B^3
 			\end{equation}
@@ -72,21 +72,21 @@
 			\begin{equation}
 				x^\mu(X^\nu}) = z^\mu(X^0)+e^\mu_{\phantom{x}i}X^i + \xi^\mu(X^\nu})
 			\end{equation}
-			où nous avons sous-entendu l'indice $A$ pour éviter d'alourdir les notations. Comme nous supposons que toutes les fonctions considérées sont différentiables\footnote{Probablement l'hypothèse la plus lourde de toute la théorie de la relativité générale...}, cette dernière relation combinée avec la partie spatiale de définition \ref{def_e_diff} nous prouvent que
+			où nous avons sous-entendu l'indice $A$ pour éviter d'alourdir les notations. Comme nous supposons que toutes les fonctions considérées sont différentiables\footnote{Probablement l'hypothèse la plus lourde de toute la théorie de la relativité générale...}, cette dernière relation combinée avec la partie spatiale de la définition \ref{def_e_diff} nous prouvent que
 			\begin{equation}
 				\xi^\mu(X^\nu}) = O((X^i)^2)
 			\end{equation}
 			quand $X^i\rightarrow 0$ pour $X^0$ fixé.
 			La matrice jacobienne de ce changement de variables, dont nous définissons les coordonnées ainsi :
 			\begin{equation}
-				A^\mu_{\phantom{x}\nu}\equiv\frac{\partial x^\mu}{\partial x^\nu}
+				A^\mu_{\phantom{x}\nu}\equiv\frac{\partial x^\mu}{\partial X^\nu}
 			\end{equation}
 			s'écrit
 			\begin{equation}
-				A^\mu_{\phantom{x}0}=e^\mu_{\phantom{x}0}(s) + \frac{\d e^\mu_{\ i}(s)}{\d s} X^i + \frac{\partial \xi ^\mu}{\partial s}
+				A^\mu_{\phantom{x}0}=e^\mu_{\phantom{x}0}(s) + \frac{\d e^\mu_{\ i}(s)}{\d s} X^i + \frac{\partial \xi ^\mu}{\partial s} \label{jacoquoi}
 			\end{equation}
 			\begin{equation}
-				A^\mu_{ \ k}=e^\mu_{\phantom{x}k}(s)+\frac{\partial \xi^\mu}{\partial X^k}
+				A^\mu_{ \ k}=e^\mu_{\phantom{x}k}(s)+\frac{\partial \xi^\mu}{\partial X^k} \label{jacoquoi_s}
 			\end{equation}
 			Remarquons que jusqu'ici toutes les définitions se passent du tenseur métrique et sont purement topologiques. À présent il est temps d'introduire les hypothèses physiques du modèle et leur manifestations dans la courbure de l'espace-temps.
 
@@ -103,6 +103,7 @@
 			\begin{equation}\label{hyp_G}
 				G^A_{\mu\nu}(X^\alpha_A)-\eta_{\mu\nu}=H^A_{\mu\nu}=O(2,3,2).
 			\end{equation}
+			Remarquons que nous adoptons ici un système de coordonnées cartésien, de telle sorte que le tenseur métrique de Minkowski a les mêmes composantes dans tous les systèmes de coordonnées, comme suggéré ci-dessus. Les composantes du tenseur métrique forment la matrice de Minkowski qui a déjà été discutée dans le cours\footnote{à venir...}.
 			L'hypothèse du mouvement lent s'écrit ainsi :
 			\begin{equation}
 				A^\mu_{\ \nu}=O(0,1,0). \label{hyp_v}
@@ -115,7 +116,7 @@
 			\begin{equation}\label{pn_contrainte}
 				\eta_{\mu\nu}A^\mu_{\ \alpha}A^\nu_{\ \beta} = \eta_{\alpha\beta}+O(2,3,2).
 			\end{equation}
-			Le tenseur métrique ayant disparu, cette relation ne donne que des contraintes mathématiques sur la structure du changement de coordonnées $x^\mu=f^\mu(X^\nu)$. La relation \ref{pn_contrainte} étant vraie pour tous $X^i$, nous pouvons effectuer un développement limité et obtenir des égalités correspondantes aux ordres $O((X^i)^0)$, $O((X^i)^1)$ et $O((X^i)^2)$. Pour simplifier les notations, nous notons $O((X^i)^n)\equiv O(X^n)$. Comme nous avons 
+			Le tenseur métrique ayant disparu, cette relation ne donne que des contraintes sur la structure mathématique du changement de coordonnées $x^\mu=f^\mu(X^\nu)$. La relation \ref{pn_contrainte} étant vraie pour tous $X^i$, nous pouvons effectuer un développement limité et obtenir des égalités qui correspondent aux ordres $O((X^i)^0)$, $O((X^i)^1)$ et $O((X^i)^2)$. Pour simplifier les notations, nous notons $O((X^i)^n)\equiv O(X^n)$. Comme nous avons 
 			\begin{equation}
 				A^\mu_{\ \nu}=e^\mu_{\ \nu}+O(X) 	
 			\end{equation}
@@ -153,9 +154,9 @@
 			\begin{equation}\label{dev_pn_contrainte}
 				-\left(e^0_{\ 0}+ \frac{\d e^i_{\ a}}{\d s} X^a \right)^2 + \left( e^i_{\ 0} + \frac{\d e^i_{\ a}}{\d s} X^a \right)\left( e^i_{\ 0} + \frac{\d e^i_{\ a}}{\d s} X^a \right)=-1+O(2).
 			\end{equation}
-			Tenant compte de ceci et ne gardant que l'ordre $O(X)$ de l'équation \ref{dev_pn_contrainte}, nous obtenons :
+			L'ordre $O(X)$ de cette équation s'écrit :
 			\begin{equation}
-				-e^0_{\ 0}\frac{\d e^i_{\ a}X^a}{\d s} + 2 e^i_{\ 0}\frac{\d e^i_{\ a}}{\d s}X^a=O(2)
+				-e^0_{\ 0}\frac{\d e^i_{\ a}}{\d s}X^ a+ 2 e^i_{\ 0}\frac{\d e^i_{\ a}}{\d s}X^a=O(2)
 			\end{equation}
 			Par ailleurs, nous avons
 			\begin{equation}
@@ -200,20 +201,216 @@
 			Avec $s\equiv X^0$.
 			Dans cette paramétrisation, les approximation post-newtoniennes \ref{hyp_g}, \ref{hyp_G} et \ref{hyp_v} sont mathématiquement équivalentes à la suite d'égalités suivantes :
 			\begin{eqnarray}
-				e^0_{\ 0}(s)&\equiv&\frac{\d z^0}{\d s}=1+O(2) \\
-				e^0_{\ a}(s)&=&e^i_{\ a}(s)\frac{\d z^i}{\d s}+O(3) \\
-				e^i_{\ 0}&\equiv&\frac{\d z^i}{\d s} \\
-				e^i_{\ a}(s)e^i_{\ b}(s)&=&\delta_{ab}+O(2) \\
-				\frac{\d e^i_{\ a}}{\d s}&=&O(2) \\
+				e^0_{\ 0}(s)&\equiv&\frac{\d z^0}{\d s}=1+O(2) \label{e_00}\\
+				e^0_{\ a}(s)&=&e^i_{\ a}(s)\frac{\d z^i}{\d s}+O(3) \label{e_0_a_pn} \\ 
+				e^i_{\ 0}&\equiv&\frac{\d z^i}{\d s}  \label{e_i_0_pn} \\
+				e^i_{\ a}(s)e^i_{\ b}(s)&=&\delta_{ab}+O(2) \label{eedelta} \\
+				\frac{\d e^i_{\ a}}{\d s}&=&O(2)  \label{de_ds} \\
 				\xi^0&=&O(3) \\
 				\xi^i&=&O(2).
 			\end{eqnarray}
+			Remarquons que l'effet du terme en $\xi$ n'affecte aucune quantité observable à l'ordre 1-PN sur le temps global $t\equiv x^0/c$, puisque $\xi^0/c=O(4)$.
 
 		\subsection{Coordonnées spatiales cartésiennes, contraintes sur les paramètres $z-e-\xi$}
 
 			Pour donner des contraintes géométriques supplémentaires, nous allons devoir anticiper un tout petit peu et considérer les équations d'Einstein.
 
+			Dans toute la suite, nous posons
+			\begin{equation}
+				g\equiv \det(g_{\mu\nu})
+			\end{equation}
+			où $\det(g_{\mu\nu})$ est le déterminant de la matrice formée par les composantes du tenseur métrique dans une base donnée. De plus, nous posons
+			\begin{equation}
+				\textbf{g}_{\mu\nu}=\sqrt{-g} g_{\mu\nu}.
+			\end{equation}
+			Nous notons $R_{\mu\nu}$ le tenseur de Ricci et $R$ sa trace selon le tenseur métrique ($R=g^{\mu\nu}R_{\mu\nu}$).
+			Comme nous l'avons vu\footnote{En attendant l'écriture du cours, nous pouvons nous référer au paragraphe 95 du célèbre cours de Landau \cite{landau}.} dans le chapitre \ref{action_champ}, nous avons
+			\begin{equation}
+			 	2g\left(R^{\mu\nu} - \frac{1}{2} R g^{\mu\nu}\right) = \left( \textbf{g}^{\mu\nu}\textbf{g}^{\rho\sigma}-\textbf{g}^{\mu\rho}\textbf{g}^{\nu\sigma} \right)_{,\rho\sigma}+Q^{\mu\nu}(\partial g)
+			\end{equation} 
+			où $Q^{\mu\nu}$ est une forme quadratique des dérivées du tenseur métrique. Il est clair que $Q^{\mu\nu}=O(4)$. En se souvenant que $\partial_0=O(1)$ et $h_{\mu\nu}=O(2,3,2)$, nous pouvons montrer que
+			\begin{equation}\label{ricci_espace}
+				2g(R^{ij}+\frac{1}{2}Rg^{ij})= (\textbf{g}^{ij}\textbf{g}^{kl} - \textbf{g}^{ik}\textbf{g}^{jl})_{,kl}+O(4)
+			\end{equation}
+			Le tenseur énergie-impulsion décrivant un ensemble de corps aussi compliqué que des planètes et une étoile a une expression bien plus compliquée que celle du fluide parfait qu'utilisent nombre de publications, mais nous pouvons tout de même faire quelques hypothèses. En effet, la composante $00$ du tenseur énergie représente la densité d'énergie contenue dans l'espace temps. Aussi, il semble légitime de supposer que $T^{00}=O(c^2)$. Les composantes spatiales du tenseur énergie impulsion devraient être de l'ordre du carré tensoriel des composantes spatiales des vitesses des corps, supposées faibles, multipliées par la densité d'énergie, il s'ensuit donc que l'on suppose $T^{ij}=O(c^2)\times O(c^{-2})=O(c^0)$. Enfin, les composantes mixtes seront de l'ordre de la moyenne géométrique des composantes temporelles et spatials, ce qui donne $T^{0i}=O(c)$. En résumé, l'approximation du champ faible et des faibles vitesses pour le tenseur énergie-impulsion s'écrit : 
+			\begin{equation}
+				T^{\mu\nu}=O(c^2,c^1,c^0).
+			\end{equation}
+			À cause du facteur $8\pi\mathscr{G}/c^4$ de l'équation d'Einstein, nous avons :
+			\begin{equation}
+				g\left(R^{ij}+\frac{1}{2}Rg^{ij}\right)=O(4).
+			\end{equation}
+			Cela nous conduit à étudier la géométrie d'une variété différentiable tridimensionnelle de métrique $\gamma_{ij}$ définie par
+			\begin{equation}\label{def_gamma}
+				\sqrt{\gamma}\gamma^{ij}=\textbf{g}^{ij}=\sqrt{-g}g^{ij}.
+			\end{equation}
+			Attention : $\gamma^{ij}$ sont les coefficients de la matrice $3\times 3$ inverse de celle formée par les coefficients $\gamma_{ij}$, alors que $g^{ij}$ sont les composantes spatiales de $g^{\mu\nu}$, matrice $4\times 4$ inverse de celle formée par les coefficients $g_{\mu\nu}$. De même, $\gamma=\det_3(\gamma_{ij})$ alors que $g=\det_4(g_{\mu\nu})$ où l'indice de $\det_n$ précise la dimension de l'espace dans lequel l'opération est effectuée.
+			Pour trouver les coefficients $\gamma_{ij}$, il faut d'abord calculer la matrice $3\times 3$ inverse de celle formée par les composantes $g_{ij}$, autrement dit, nous cherchons $\tilde{\gamma}_{ij}$ telle que $g^{ik}\tilde{\gamma}_{kj}=\delta^i_j$. Mais quand nous écrivons l'égalité $g^{\mu\alpha}g_{\alpha\nu}=\delta^\mu_\nu$ composante par composante :
+			\begin{eqnarray}
+				g^{0k}g_{k0}+g^{00}g_{00}&=&1 \\
+				g^{ik}g_{kj}+g^{i0}g_{0j}&=&\delta^i_j \\
+				g^{ik}g_{k0}+g^{i0}g_{00}&=&0
+			\end{eqnarray}
+			et extrayant $g^{i0}$ de la dernière égalité et en l'injectant dans la deuxième, nous obtenons :
+			\begin{equation}
+				g^{ik}\left( g_{ik} - \frac{g_{0k}g_{0j}}{g_{00}} \right) = \delta^i_j
+			\end{equation}
+			donc l'inverse en dimension 3 de $g^{ij}$ est
+			\begin{equation}
+				\tilde{\gamma}_{ij}\equiv g_{ij}-\frac{g_{0i}g_{0j}}{g_{00}}.
+			\end{equation}
+			Ainsi, le $\gamma_{ij}$ recherché doit être proportionnel à $\tilde{\gamma}_{ij}$. Par un calcul dont j'ignore le secret, il se trouve que
+			\begin{equation}
+				\mathrm{det}_3 (\tilde{\gamma}_{ij})\equiv\tilde{\gamma} = \frac{\det_4(g_{\mu\nu})}{g_{00}}=\frac{g}{g_{00}}.
+			\end{equation}
+			où $\mathrm{det}_3$ désigne le déterminant en dimension 3 et $\det_4$ le déterminant en dimension 4.
+			Or en calculant le déterminant de l'égalité \ref{def_gamma}, sachant que $\tilde{\gamma}^{ij}=g^{ij}$, nous obtenons
+			\begin{equation}
+				\gamma=-g_{00}^3\tilde{\gamma}. 
+			\end{equation}
+			Or comme $\gamma$ doit être proportionnel à $\tilde{\gamma}^{ij}$, il est clair que la seule solution possible est 
+			\begin{equation}
+			\gamma_{ij}=-g_{00}g_{ij}+g_{0i}g_{0j}.	
+			\end{equation}
+			D'après \ref{ricci_espace}, si nous considérons uniquement l'espace tridimensionnel riemannien de métrique $\gamma_{ij}$, nous pouvons former un tenseur de Ricci tridimensionnel à partir des $\gamma_{ij}$, noté $^3R_{ij}$, et nous trouvons que
+			\begin{equation}
+				g\left(R^{ij}+\frac{1}{2}Rg^{ij}\right)=\gamma\left(^3R_{ij}+ \frac{1}{2}^3R\gamma_{ij} \right) + O(4).
+			\end{equation}
+			D'après l'équation d'Einstein et des approximations faites sur le tenseur énergie-impulsion, nous voyons que l'espace tri-dimensionnel est plat jusqu'à l'ordre $O(4)$. Il existe donc un système de coordonnées privilégié, que nous appelons cartésien isotrope, dans lequel nous avons
+			\begin{equation}
+				\gamma_{ij}=\delta_{ij}+O(4).
+			\end{equation}
+			Comme $g_{0i}=O(3)$, nous en déduisons que nous pouvons imposer, dans tous les systèmes de coordonnées, les conditions spatiales isotropes :
+			\begin{eqnarray}
+				-g_{00}g_{ij}&=&\delta_{ij}+O(4), \label{isotrope_g} \\ 
+				\forall A\in\{1,\ldots,N\},\, -G_{00}^AG^A_{ij}&=&\delta_{ij}+O(4). \label{isotrope_g_a}
+			\end{eqnarray}
+			Nous allons voir que ces conditions déterminent complètement le changement de coordonnées $x^\mu=f^\mu(X^\nu)$ aux ordres nécessaires pour la suite. En effet, \ref{isotrope_g_a} doit se déduire de \ref{isotrope_g} par le changement de coordonnées et cela suffira à contraindre la matrice jacobienne du changement de variables. Récrivons \ref{isotrope_g} (nous omettons les indices $A$):
+			\begin{eqnarray}
+				-G_{00}G_{ab}&=& -g_{\alpha\beta}A^\alpha_{\ 0}A^{\beta}_{\ 0}g_{\mu\nu}A^{\mu}_{\ a}A^\nu_{\ b} \\
+							 &=& -g_{00}A^0_{\ 0}A^0_{\ 0}g_{ij}A^i_{\ a}A^j_{\ b} - g_{ij}A^i_{\ 0}A^j_{\ 0}g_{00}A^0_{\ a}A^0_{\ b} \nonumber\\
+							  && -g_{00}A^0_{\ 0}A^0_{\ 0}g_{00}A^0_{\ a}A^0_{\ b} - g_{ij}A^i_{\ 0}A^j_{\ 0} g_{kl}A^k_{\ a}A^l_{\ b} \label{calcul_int}
+			\end{eqnarray}
+			Dans \ref{calcul_int}, nous utilisons les conditions d'isotropie spatiale pour simplifier la première ligne. Notons que d'après les hypothèse 1-PN sur le tenseur métrique et sur la matrice jacobienne, la deuxième ligne peut se simplifier si l'on néglige l'ordre $O(4)$. De telle sorte que nous avons 
+			\begin{eqnarray}
+			 	-G_{00}G_{ij}&=& A^0_{\ 0}A^0_{\ 0}\delta_{ij}A^i_{\ a}A^j_{\ b} + \delta_{ij}A^i_{\ 0}A^j_{\ 0}A^0_{\ a}A^0_{\ b} \nonumber\\
+			 				  && -A^0_{\ 0}A^0_{\ 0}A^0_{\ a}A^0_{\ b} - \delta_{ij}A^i_{\ 0}A^j_{\ 0}\delta_{kl}A^k_{\ a}A^l_{\ b} + O(4)
+			\end{eqnarray} 
+			de telle sorte que les conditions d'isotropie spatiale peuvent s'écrire de la façon suivante :
+			\begin{equation}
+				-\eta_{\mu\nu}A^\mu_{\ 0}A^\nu_{\ 0}\eta_{\alpha\beta}A^\alpha_{\ a}A^\beta_{\ b}=\delta_{ab}+O(4).\label{contrainte_isotropie}
+			\end{equation}
+			De même que dans le paragraphe précédent, nous avons éliminé les dépendances en tenseur métrique, si bien que nous avons obtenu une contrainte sur la structure mathématique du changement de variables. Selon les mêmes méthodes que précédemment, nous allons analyser cette égalité ordre par ordre en $O(X)$. L'ordre zéro donne immédiatement
+			\begin{equation}
+				\eta_{\mu\nu}e^\mu_{\ 0}e^\nu_{\ 0}\, 	\eta_{\alpha\beta}e^\alpha_{\ a}e^\beta_{\ b}=-\delta_{ab}+O(4).
+			\end{equation}
 
+			Cette équation va nous permettre de caractériser précisément les $e^i_{\ j}$. En effet, tenant compte des résultats du paragraphe précédent et en négligeant les termes d'ordre $O(4)$, nous obtenons
+			\begin{equation}
+				e^0_{\ 0}^2\left( e^j_{\ a}e^j_{\ b} - e^j_{\ a}e^j_{\ b}\frac{\bm{v}^2}{c^2}-e^j_{\ a}v^j e^i_{\ b}v^i \right) = \delta_{ab}+O(4)
+			\end{equation}
+			où $\bm{v}^2\equiv v^kv^k=c^2e^k_{\ 0}e^k_{\ 0} + O(4)$. Notons que nous avons artificiellement multiplié le terme $e^j_{\ a}e^j_{\ b}\bm{v}^2/c^2$ par $e^0_{\ 0}^2=1+O(2)$ ce qui ne change l'équation qu'à l'ordre $O(4)$, négligé ici. En se souvenant que $e^0_{\ a}=e^i_{\ a}v^i/c+O(3)$, nous pouvons écrire la dernière équation comme suit 
+			\begin{equation}
+				e^0_{\ 0} \left( e^j_{\ a} \left( 1-\frac{\bm{v}^2}{2c^2} \right) - \frac{v^j v^i}{2c^2} e^i_{\ a} \right)
+				e^0_{\ 0} \left( e^j_{\ b} \left( 1-\frac{\bm{v}^2}{2c^2} \right) - \frac{v^j v^i}{2c^2} e^i_{\ b} \right)
+				= \delta_{ab}+O(4)
+			\end{equation}
+			Cela signifie qu'au moins à l'ordre $O(4)$, la matrice $3\times 3$ dont les composantes $ja$ sont
+			\begin{equation}
+				R^j_{\ a}=e^0_{\ 0} \left( e^j_{\ a} \left( 1-\frac{\bm{v}^2}{2c^2} \right) - \frac{v^j v^i}{2c^2} e^i_{\ a} \right)
+			\end{equation}
+			vérifie
+			\begin{equation}
+				R^j_{\ a}R^j_{\ b}=\delta_{ab}+O(4)
+			\end{equation}
+			donc que les composantes de la matrice sont les vecteurs d'une base orthonormée. Ainsi, les nombres $R^j_{\ a}$ sont les composantes d'une matrice orthogonale. Or, si l'on déplace continuement la ligne d'univers $\mathscr{L}_A$ (l'indice $A$ a été omis dans les calculs) jusqu'à ce que $X^\mu=x^\mu$, alors $e^\mu_{\nu}=\delta^\mu_{\nu}$ et le déterminant de cette matrice de rotation vaut $1$. Par transformation continue jusqu'à une ligne d'univers quelconque, le déterminant ne peut changer brutalement de $1$ à $-1$, donc le déterminant de la matrice de composantes $R^j_{\ a}$ vaut $1$ : c'est une matrice de rotation. Ajoutons à cela que comme $e^0_{\ 0}=1+O(2)$, la rotation est lente à l'ordre $O(2)$ puisque nous avons
+			\begin{equation}
+			 	\frac{\d R^j_{\ a}}{\d t}=O(2).
+			\end{equation} 
+			Pour continuer notre analyse, nous allons essayer d'isoler les $e^i_{\ j}$. À ce titre, remarquons que
+			\begin{equation}
+				e^j_{\ a} \left( 1-\frac{\bm{v}^2}{2c^2} \right) - \frac{v^i v^j}{2c^2} e^i_{\ a} = e^i_{\ a}\left( \delta^{ji}-\delta^{ji}\frac{\bm{v}^2}{2c^2}  - \frac{v^jv^i}{2c^2} \right) = e^i_{\ a}\left( 1-\frac{\bm{v}^2}{2c^2} \right)\left( \delta^{ji} - \frac{v^jv^i}{2c^2} \right) + O(4)
+			\end{equation} 
+			Autrement dit
+			\begin{equation}
+				e^0_{\ 0}e^i_{\ a}\left( 1-\frac{\bm{v}^2}{2c^2} \right)\left( \delta^{ji} - \frac{v^jv^i}{2c^2} \right)=R^j_{\ a}+O(4)
+			\end{equation}
+			Notons que $(1-\bm{v}^2}/2c^2)^{-1}=1+\bm{v}^2/2c^2+O(4)$ et que l'inverse de la matrice dont les composantes $ji$ sont $\delta^{ji} - v^jv^i/2c^2$ est la matrice dont les composantes $ij$ sont $\delta^{ij} + v^iv^j/2c^2 + O(4)$. Nous obtenons finalement
+			\begin{equation}
+				e^0_{\ 0}e^i_{\ a}=\left( 1+\frac{\bm{v}^2}{2c^2} \right)\left( \delta^{ij}+\frac{v^iv^j}{2c^2} \right)R^j_{\ a} + O(4).
+			\end{equation}
+
+			À présent nous voulons obtenir des contraintes sur $\xi^i$. Pour ce faire, nous allons analyser l'ordre $O(X)$ de l'équation \ref{contrainte_isotropie}.
+			Cela s'écrit
+			\begin{equation}
+				-2\eta_{\mu\nu}\left( \frac{\d e^{(\mu}_{\ i}}{\d s}X^i+\frac{\partial \xi^{(\mu}}{\partial s}} \right) e^{\nu)}_{\ 0} \, \eta_{\alpha\beta} \, e^\alpha_{\ a}e^\beta_{\ b} - \eta_{\mu\nu} \, e^\mu_{\ 0}e^\nu_{\ 0} \, \eta_{\alpha\beta} \, \left( e^\alpha_{\ a}\frac{\partial \xi^\beta}{\partial X^b}+e^\beta_{\ b}\frac{\partial \xi^\alpha}{\partial X^a} \right) = O(4)+O(X^2).
+			\end{equation}
+			Mais comme $\partial \xi^\mu/\partial s = O(4,3)$ et $e^\nu_{\ 0}=O(1)$, le produit des deux est de l'ordre $O(4)$. De même, nous pouvons négliger les termes $e^0_{\ a}\partial \xi^0/\partial X^b$ dans le deuxième terme. De plus, $\eta_{\alpha\beta} \, e^\alpha_{\ a}e^\beta_{\ b}=\delta_{ab}+O(2)$ et la parenthèse du premier terme est au moins de l'ordre $O(2)$. De même, nous avons $\eta_{\mu\nu} \, e^\mu_{\ 0}e^\nu_{\ 0}=-1+O(2)$ et la parenthèse du dernier terme est au moins de l'ordre $O(2)$. Ainsi, l'expression ci-dessus se simplifie en
+			\begin{equation}
+				-2\eta_{\mu\nu}\, e^\mu_{\ 0}\frac{\d e^\nu_{\ i}}{\d s} X^i + 2 e^i_{(a}\frac{\partial \xi^i}{\partial X^{b)}}=O(4).
+			\end{equation}
+			Développons le premier terme :
+			\begin{equation}
+				-\eta_{\mu\nu}\, e^\mu_{\ 0}\frac{\d e^\nu_{\ i}}{\d s} X^i =  e^0_{\ 0}\frac{\d e^0_{\ i}}{\d s}X^i - e^j_{\ 0} \frac{\d e^j_{\ i}}{\d s}X^i  
+				= \frac{\d }{\d s}\left( e^j_{\ i}\frac{\d z^j}{\d s} \right) X^i -\frac{\d z^j}{\d s}\frac{\d e^j_{\ i}}{\d s} X^i +O(4)
+				= e^j_{\ i}\frac{\d ^2 z^j}{\d s^2} X^i + O(4)
+			\end{equation}
+			où nous avons utilisé \ref{e_0_a_pn}, \ref{e_i_0_pn} et \ref{de_ds}.
+			À présent, définissons $\Xi^i$ 
+			\begin{equation}
+			 	\xi^a=e^a_{\ i}(s) \, \Xi^i,
+			\end{equation} 
+			nous obtenons
+			\begin{equation}
+				e^i_{\ a} e^i_{\ b}\frac{\partial \Xi^b}{\partial X^a}+e^i_{\ a} e^i_{\ b}\frac{\partial \Xi^a}{\partial X^b}=-2e^j_{\ i}\frac{\d ^2 z^j}{\d s^2} X^i + O(4) = -2 A_i X^i \delta_{ab} + O(4)
+			\end{equation} 
+			où nous avons posé 
+			\begin{equation}
+				A_i \equiv c^2 e^j_{\ i} \frac{\d ^2 z^j}{\d s^2} = e^j_{\ i} \frac{\d ^2 z^j}{\d \tau^2}
+			\end{equation}
+			où $\tau = s/c$.
+			Finalement, en utilisant la contrainte \ref{eedelta}, nous obtenons une équation différentielle pour $\Xi^i$ :
+			\begin{equation}
+				\frac{\partial \Xi^a}{\partial X^b}+\frac{\partial \Xi^b}{\partial X^a} = -\frac{2}{c^2	} A_i X^i \delta_{ab} + O(4). \label{killing_s}
+			\end{equation}
+			En intégrant les composantes $ab=jj$, nous trouvons 
+			\begin{equation}
+				\Xi^j=\frac{1}{c^2} \left( \frac{1}{2} A_j X_iX^i - X^j A_i X^i \right) + h^j + O(4)
+			\end{equation}
+			où $h^j$ est solution de l'équation \ref{killing_s} sans second membre. $h^j$ est donc un vecteur de Killing de l'espace euclidien, c'est-à-dire la composition d'une translation, d'une rotation et d'une réflexion. Autrement dit, 
+			\begin{equation}
+				h^i=C^i+\Omega_{ij}X^j
+			\end{equation}
+			où $C^i$ est constant et $\Omega_{ij}$ est la matrice d'une rotation ou une réflexion. Mais nous savons que $\Xi^a$ doit être au moins quadratique en $X^i$, donc il n'y a pas de contribution en $h^i$. Ainsi, 
+			\begin{equation}
+				\Xi^a=\frac{1}{c^2} \left( \frac{1}{2} A_a X_iX^i - X^a A_i X^i \right) + O(4). \label{parametrisation_z_e_xi}
+			\end{equation}
+			Nous pouvons résumer tous nos résultats dans le théorème suivant.
+
+			\begin{theorem}
+				Les approximations post-newtoniennes \ref{hyp_g}, \ref{hyp_G}, \ref{hyp_v} et les conditions spatiales isotropes \ref{isotrope_g} et \ref{isotrope_g_a} sont mathématiquement équivalentes aux contraintes suivantes sur les paramètres $z-e-\xi$ de chaque transformation des coordonnées (l'indice $A$ étant omis) paramétrisée selon \ref{parametrisation_z_e_xi}, \ref{jacoquoi} et \ref{jacoquoi_s} :
+				\begin{eqnarray}
+					e^0_{\ 0}&\equiv& \frac{\d z^0}{\d s}=1+O(2) \\
+					e^i_{\ 0}&\equiv& \frac{\d z^i}{\d s} = O(1) \\
+					e^0_{\ a}&=&e^i_{\ a}\frac{\d z^i}{\d s}+O(3) = O(1) \\
+					e^0_{\ 0}e^i_{\ a}&=&\left( 1+\frac{\bm{v}^2}{2c^2} \right)\left( \delta^{ij}+\frac{v^iv^j}{2c^2} \right)R^j_{\ a} + O(4) \\
+					\xi^0}&=&O(3) \\
+					\xi^i&=&\frac{1}{c^2}e^i_{\ j} \left( \frac{1}{2}A_jX^kX^k - X^j A_kX^k \right)
+				\end{eqnarray}
+				où les nombres $R^i_{\ a}(s)$ sont les composantes d'une matrice de rotation de l'espace lentement variable :
+				\begin{eqnarray}
+				 	R^i_{\ a}R^i_{\ b}&=&\delta_{ab}, \\
+				 	\det(R^i_{\ a})&=&+1, \\
+					\frac{\d R^i_{\ a}}{\d t}&=&O(2),
+				\end{eqnarray}
+				et où 
+				\begin{equation}
+					A_i \equiv c^2 e^j_{\ i} \frac{\d ^2 z^j}{\d s^2} = e^j_{\ i} \frac{\d ^2 z^j}{\d \tau^2} 
+				\end{equation}
+			\end{theorem}
+
+
+\iffalse
 	\section{Action du problème à $N$ corps}
 
 		Nous souhaitons obtenir les équations du mouvement à partir d'un principe variationnel. Pour cela nous devons décrire l'action du champ gravitationnel ainsi que l'action de la matière des corps en mouvement. L'action du champ gravitationnel a déjà été discutée au chapitre \ref{action_champ} de la partie 1 :
@@ -295,7 +492,7 @@
 			\end{equation}
 			qui coïncide avec l'expression de l'action de $N$ corps ponctuels non interagissant en posant $\alpha=1$.
 			Ainsi l'action totale de la matière d'un système physique donné s'écrit :
-
+\fi
 
 	\section{Template}
 		\begin{post}
