@@ -96,6 +96,7 @@
 			\begin{equation}
 				\frac{\d z^i}{\d s} = \frac{\d z^i}{c \, \d \tau} = O(1)
 			\end{equation}
+			où $\tau \equiv s/c$.
 			L'hypothèse du champ faible combinée avec l'hypothèse du mouvement lent nous amène à supposer qu'il existe $N+1$ systèmes de coordonnées $x^\mu$ et $X^\mu_A,\ A\in\{1,\ldots,N\}$ tels qu'en chacun de ces systèmes de coordonnées, le tenseur métrique vérifie :
 			\begin{equation}\label{hyp_g}
 				g_{\mu\nu}(x^\alpha)-\eta_{\mu\nu}=h_{\mu\nu}(x^\alpha)=O(2,3,2),
@@ -362,13 +363,12 @@
 			\end{equation} 
 			nous obtenons
 			\begin{equation}
-				e^i_{\ a} e^i_{\ b}\frac{\partial \Xi^b}{\partial X^a}+e^i_{\ a} e^i_{\ b}\frac{\partial \Xi^a}{\partial X^b}=-2e^j_{\ i}\frac{\d ^2 z^j}{\d s^2} X^i + O(4) = -2 A_i X^i \delta_{ab} + O(4)
+				e^i_{\ a} e^i_{\ b}\frac{\partial \Xi^b}{\partial X^a}+e^i_{\ a} e^i_{\ b}\frac{\partial \Xi^a}{\partial X^b}=-2e^j_{\ i}\frac{\d ^2 z^j}{\d s^2} X^i + O(4) = -\frac{2}{c^2} A_i X^i \delta_{ab} + O(4)
 			\end{equation} 
 			où nous avons posé 
 			\begin{equation}
 				A_i \equiv c^2 e^j_{\ i} \frac{\d ^2 z^j}{\d s^2} = e^j_{\ i} \frac{\d ^2 z^j}{\d \tau^2}
 			\end{equation}
-			où $\tau = s/c$.
 			Finalement, en utilisant la contrainte \ref{eedelta}, nous obtenons une équation différentielle pour $\Xi^i$ :
 			\begin{equation}
 				\frac{\partial \Xi^a}{\partial X^b}+\frac{\partial \Xi^b}{\partial X^a} = -\frac{2}{c^2	} A_i X^i \delta_{ab} + O(4). \label{killing_s}
