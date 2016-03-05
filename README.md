@@ -34,7 +34,7 @@ Grâce à la commande
 ```\input{repertoire/fichier.tex} ```
 , chacun peut travailler de son côté sur la partie qui le concerne.
 Il vous suffit donc de modifier les fichiers dans les répertoires qui portent votre nom. 
-Un coup d'oeil au code source /main/main.tex vous permettra de comprendre comment fonctionne le document. 
+Un coup d'oeil au code source ```/main/main.tex``` vous permettra de comprendre comment fonctionne le document. 
 Si les noms des fichiers ne vous conviennent pas
 et que vous les changez, pensez à les changer aussi dans ```/main/main.tex```
 Si vous voulez modifier le template global ou ajouter des packages, n'hésitez pas à modifier le main,
